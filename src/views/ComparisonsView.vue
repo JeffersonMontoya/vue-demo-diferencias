@@ -1,8 +1,13 @@
 <template>
   <div class="container">
-    <h1 class="title">
-      <span class="gradient-text">Diferencias entre Vue y React</span>
-    </h1>
+    <div class="header">
+      <h1 class="title">
+        <span class="gradient-text">Diferencias entre Vue y React</span>
+      </h1>
+      <router-link to="/zip-file" class="zip-btn">
+        🚀 Ir al Gestor ZIP
+      </router-link>
+    </div>
 
     <div class="cards">
       <DifferenceCard
@@ -41,14 +46,40 @@ export default {
   color: #e5e7eb;
   overflow: hidden;
 }
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 .title {
   font-size: 2.3rem;
   font-weight: 900;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   letter-spacing: -0.6px;
-  text-align: center;
 }
+
+.zip-btn {
+  display: inline-block;
+  padding: 14px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+
+  background: linear-gradient(90deg, #2563eb, #4f46e5);
+  box-shadow: 0px 4px 14px rgba(79, 70, 229, 0.4);
+
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.zip-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0px 6px 18px rgba(79, 70, 229, 0.6);
+}
+
 .cards {
   display: flex;
   justify-content: center;
@@ -64,21 +95,9 @@ export default {
   -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: 1024px) {
-  .cards {
-    gap: 20px;
-    max-width: 900px;
-  }
-}
-
 @media (max-width: 768px) {
   .title {
     font-size: 1.8rem;
-  }
-  .cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
   }
 }
 
