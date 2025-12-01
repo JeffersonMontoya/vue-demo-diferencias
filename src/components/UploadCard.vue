@@ -2,7 +2,8 @@
     <div class="zip-card">
       <div class="zip-card-content">
         <div class="field">
-          <label class="label">Seleccionar ZIP</label>
+          <!-- Label con interpolacion de mustache -->
+          <label class="label">{{ zipLabel }}</label>
           <input
             ref="fileInputRef"
             type="file"
@@ -32,6 +33,10 @@
   </template>
   
   <script setup>
+
+  // constante que cambia en el template con mustache
+  const zipLabel = "Seleccionar Zip";
+
   import { ref, watch } from 'vue'
   
   const props = defineProps({
