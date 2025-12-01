@@ -8,7 +8,7 @@
           v-for="file in files"
           :key="file.id"
           @click="handleFileClick(file)"
-          :class="['file-item', selectedFile === file ? 'active' : '']"
+          :class="['file-item', isSelected(file) ? 'active' : '']"
         >
           <!-- Si el archivo actual coincide con el seleccionado, se añade la clase 'active' 
   para resaltar visualmente el ítem. -->
@@ -24,10 +24,21 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 
 // Variable reactiva que almacena el archivo seleccionado.
 const selectedFile = ref(null);
+
+// Computed para verificar si un archivo es el seleccionado
+const isSelected = computed(() => {
+  return (file) => {
+    // Si no hay archivo seleccionado
+    if (!selectedFile.value) return false;
+    // Validación por id para evitar problemas con referencias
+    return selectedFile.value.id === file.id;
+  };
+});
+
 
 const props = defineProps({
   files: {
@@ -124,5 +135,6 @@ const handleFileClick = (file) => {
 .active {
   border-color: #4f46e5;
   background: #2d2d2d;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 </style>
