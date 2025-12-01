@@ -13,8 +13,7 @@
         />
       </div>
 
-      <!-- directiva s-how que permite un mejor rendimiento de alternancia -->
-      <p v-show="selectedFile" class="file-info">
+      <p v-if="selectedFile" class="file-info">
         Archivo seleccionado: {{ selectedFile.name }}
       </p>
 
@@ -27,7 +26,7 @@
       </button>
 
       <p
-        v-show="uploadMessage"
+        v-if="uploadMessage"
         :class="uploadMessage.type === 'success' ? 'success-msg' : 'error-msg'"
       >
         {{ uploadMessage.text }}
@@ -42,7 +41,6 @@ const zipLabel = "Seleccionar Zip";
 
 import { ref, watch, computed } from "vue";
 
-// Propiedad computada
 const isUploadButtonDisabled = computed(() => {
   // El botón está deshabilitado si:
   // 1. No se ha seleccionado ningún archivo (props.selectedFile es falso).
