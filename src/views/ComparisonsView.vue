@@ -2,7 +2,8 @@
   <div class="container">
     <div class="header">
       <h1 class="title">
-        <span class="gradient-text">Diferencias entre Vue y React</span>
+        <!-- Titulo dinamico renderizado cxon mustache -->
+        <span class="gradient-text">{{ title }}</span>
       </h1>
       <router-link to="/zip-file" class="zip-btn">
         🚀 Ir al Gestor ZIP
@@ -29,7 +30,12 @@ export default {
   name: "ComparisonsView",
   components: { DifferenceCard },
   data() {
-    return { differences };
+    return {
+      // Datos importados para generar las tarjetas del comparativo
+      differences,
+      // Texto del encabezado renderizado mediante interpolación {{ }}
+      title: "Diferencias entre Vue y React",
+    };
   },
 };
 </script>

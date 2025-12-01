@@ -72,6 +72,8 @@ export const useZipManager = () => {
       };
   
       selectedFile.value = null;
+
+      return true;
   
     } catch (error) {
       console.error("Error al subir ZIP:", error);
