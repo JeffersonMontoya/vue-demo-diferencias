@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header">
       <h1 class="title">
-        <!-- Titulo dinamico renderizado cxon mustache -->
+        <!-- Titulo dinamico renderizado con mustache -->
         <span class="gradient-text">{{ title }}</span>
       </h1>
       <router-link to="/zip-file" class="zip-btn">
