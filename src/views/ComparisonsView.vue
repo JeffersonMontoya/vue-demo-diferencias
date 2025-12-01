@@ -6,7 +6,8 @@
         <span class="gradient-text">{{ title }}</span>
       </h1>
       <router-link to="/zip-file" class="zip-btn">
-        🚀 Ir al Gestor ZIP
+        <!-- Texto boton dinamico utilizando mustache -->
+        {{ zipText }}
       </router-link>
     </div>
 
@@ -33,8 +34,9 @@ export default {
     return {
       // Datos importados para generar las tarjetas del comparativo
       differences,
-      // Texto del encabezado renderizado mediante interpolación {{ }}
+     // Variables usadas en el template mediante interpolación {{ }} para el título y el botón
       title: "Diferencias entre Vue y React",
+      zipText: "🚀 Ir al Gestor ZIP",
     };
   },
 };
