@@ -1,37 +1,27 @@
-# ========== DEPENDENCIAS ==========
-
+# ================= DEPENDENCIAS =================
 node_modules/
 
-# ========== ARCHIVOS DE BLOQUEO (usa solo uno) ==========
-
+# ================= LOCKFILE =================
 package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
-
-# ========== SISTEMA ==========
-
+# ================= SISTEMA =================
 .DS_Store
 Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-
-# ========== COMPILADOS Y BUILD (Vue CLI) ==========
-
+# ================= BUILD / OUTPUT =================
 dist/
 public/build/
 build/
 out/
 
-# Vue CLI cache
+# Caches de Vue CLI y ESLint
 node_modules/.cache/
 .vue-cache/
 .eslintcache
 
-
-# ========== ARCHIVOS DE ENTORNO ==========
-
+# ================= VARIABLES DE ENTORNO =================
 .env
 .env.local
 .env.*.local
@@ -40,37 +30,30 @@ node_modules/.cache/
 .env.test
 .env.staging
 
-# No subir claves sensibles Firebase
+# Logs de Firebase locales
 firebase-debug.log
 firestore-debug.log
 
-
-# ========== LOGS ==========
-
+# ================= LOGS =================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 *.log
 
-
-# ========== FIREBASE ==========
-
-# Cache
+# ================= FIREBASE =================
 .firebase/
 .firebase-tools.json
 firebase-debug.log*
 
-# NO ignores estos archivos (se suben):
+# Archivos de configuración de Firebase que SI se suben:
 # firebase.json
 # .firebaserc
 # firestore.rules
 # firestore.indexes.json
 # storage.rules
 
-
-# ========== DIRECTORIOS TEMPORALES ==========
-
+# ================= DIRECTORIOS TEMPORALES =================
 tmp/
 temp/
 *.tmp
@@ -79,13 +62,8 @@ temp/
 *.swp
 *.swo
 
-
-# ========== EDITORES Y IDEs ==========
-
-# JetBrains / WebStorm
+# ================= EDITORES Y IDEs =================
 .idea/
-
-# VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -93,32 +71,21 @@ temp/
 !.vscode/extensions.json
 .vscode/*.local
 
-
-# ========== CLOUD FUNCTIONS (si usas Firebase Functions) ==========
-
+# ================= CLOUD FUNCTIONS (Firebase) =================
 functions/node_modules/
 functions/lib/
 functions/dist/
 functions/.cache/
 functions/tmp/
-
-# TypeScript info (Functions)
 functions/tsconfig.tsbuildinfo
 
-
-# ========== HERRAMIENTAS EXTRA ==========
-
-# Compresión temporal
+# ================= HERRAMIENTAS EXTRA / TESTING =================
 *.zip
 *.tar
 *.gz
 *.7z
 *.rar
-
-# Testing (si usas Jest o Cypress más adelante)
 coverage/
 cypress/screenshots/
 cypress/videos/
 cypress/downloads/
-
-Buenb
