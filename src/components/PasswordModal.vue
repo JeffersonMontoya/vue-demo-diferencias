@@ -1,4 +1,6 @@
 <template>
+    <!-- El modal no existe la mayor parte del tiempo , entonces evita mantenerlo en memoria
+    utilizar la directiva v-show lo dejaria cargando en el dom incluso sin usarse -->
   <div v-if="show" class="modal-overlay" @click.self="handleClose">
     <div class="modal-content">
       <h3 class="modal-title">🔒 Ingrese la contraseña</h3>
