@@ -2,7 +2,8 @@
   <div class="zip-container">
     <div class="zip-header">
       <h1 class="zip-title">
-        <span class="gradient-text">Cargar Archivo ZIP</span>
+        <!-- Texto dinamico con mustache -->
+        <span class="gradient-text">{{ cargarArchivoZip }}</span>
       </h1>
     </div>
 
@@ -33,10 +34,11 @@
 </template>
 
 <script setup>
-import { useZipManager } from '../composables/useZipManager'
-import UploadCard from '../components/UploadCard.vue'
-import FileList from '../components/FileList.vue'
-import PasswordModal from '../components/PasswordModal.vue'
+const cargarArchivoZip = "Cargar Archivo ZIP";
+import { useZipManager } from "../composables/useZipManager";
+import UploadCard from "../components/UploadCard.vue";
+import FileList from "../components/FileList.vue";
+import PasswordModal from "../components/PasswordModal.vue";
 
 const {
   selectedFile,
@@ -53,8 +55,8 @@ const {
   openPasswordModal,
   closeModal,
   downloadFile,
-  formatBytes
-} = useZipManager()
+  formatBytes,
+} = useZipManager();
 </script>
 
 <style scoped>
