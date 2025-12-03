@@ -2,6 +2,9 @@
     <!-- El modal no existe la mayor parte del tiempo , entonces evita mantenerlo en memoria
     utilizar la directiva v-show lo dejaria cargando en el dom incluso sin usarse -->
   <div v-if="show" class="modal-overlay" @click.self="handleClose">
+    <!-- Yo puedo ayudar al garbage collector estructurando bien mi codigo usando v-if para elementos 
+    que no deben ocupar memoria cuando no se muestran, limpiando event listeners y timers cuando el componente
+    se desmonta, y evitando mantener referencias innecesarias  -->
     <div class="modal-content">
       <h3 class="modal-title">🔒 Ingrese la contraseña</h3>
       <p class="modal-subtitle">
